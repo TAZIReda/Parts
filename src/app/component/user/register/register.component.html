@@ -1,1 +1,90 @@
-<p>register works!</p>
+<div class="container">
+  <p-card header="Sign Up">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <!-- <p-growl [value]="msgs"></p-growl> -->
+
+      <div class="p-field">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          pInputText
+          formControlName="name"
+          required
+        />
+      </div>
+
+      <div class="p-field">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          pInputText
+          type="email"
+          formControlName="email"
+          required
+        />
+      </div>
+
+      <div class="p-field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          pPassword
+          formControlName="password"
+          required
+        />
+      </div>
+
+      <div class="p-field">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          pPassword
+          formControlName="confirmPassword"
+          required
+        />
+      </div>
+      <div class="p-field">
+        <label for="phone">Phone number</label>
+        <input
+          id="phone"
+          type="tel"
+          pInputText
+          formControlName="phone"
+          required
+        />
+      </div>
+
+      <div class="p-field">
+        <label for="address">Address</label>
+        <input
+          id="address"
+          pInputText
+          rows="3"
+          formControlName="address"
+          required
+        />
+      </div>
+
+      <div class="p-field">
+        <label for="enterpriseName">Enterprise name</label>
+        <input
+          id="enterpriseName"
+          type="text"
+          pInputText
+          formControlName="enterpriseName"
+          required
+        />
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Sign Up"
+        [disabled]="signupForm.invalid"
+      ></button>
+    </form>
+  </p-card>
+</div>
