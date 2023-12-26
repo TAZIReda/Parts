@@ -30,6 +30,7 @@ import{TableModule} from 'primeng/table';
 import { UserService } from './Services/user.service';
 import {AvatarModule} from 'primeng/avatar';
 import { TabViewModule } from 'primeng/tabview';
+import {FileUploadModule } from 'primeng/fileupload';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { TabViewModule } from 'primeng/tabview';
     HttpClientModule,
     AvatarModule,
     TabViewModule,
+    FileUploadModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

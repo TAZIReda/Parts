@@ -1,0 +1,41 @@
+// update-user.component.scss
+.container{
+    width: 70%;
+    height: 400px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+p-card {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 50px;
+  
+    form {
+      display: flex;
+      flex-direction: column;
+  
+      .p-field {
+        margin-bottom: 1.5rem;
+  
+        label {
+          margin-bottom: 0.5rem;
+          font-weight: bold;
+        }
+  
+        input {
+          width: 100%;
+        }
+  
+        p-fileUpload {
+          width: 100%;
+        }
+      }
+  
+      button {
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+  }
+ 
