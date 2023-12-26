@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +26,8 @@ import {PasswordModule} from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 // import { GrowlModule } from 'primeng/';
 import{PanelModule} from 'primeng/panel';
+import{TableModule} from 'primeng/table';
+import { UserService } from './Services/user.service';
 
 @NgModule({
   declarations: [
@@ -50,9 +53,11 @@ import{PanelModule} from 'primeng/panel';
     ReactiveFormsModule,
     ButtonModule,
     PanelModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TableModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
