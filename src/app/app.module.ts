@@ -28,6 +28,8 @@ import { ButtonModule } from 'primeng/button';
 import{PanelModule} from 'primeng/panel';
 import{TableModule} from 'primeng/table';
 import { UserService } from './Services/user.service';
+import {AvatarModule} from 'primeng/avatar';
+import { TabViewModule } from 'primeng/tabview';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { UserService } from './Services/user.service';
     PanelModule,
     BrowserAnimationsModule,
     TableModule,
-    HttpClientModule
+    HttpClientModule,
+    AvatarModule,
+    TabViewModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
