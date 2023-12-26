@@ -1,0 +1,41 @@
+.containerr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  form {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    .info {
+      width: 100%;
+      margin-bottom: 15px;
+
+      .p-inputgroup {
+        width: 100%;
+
+        input {
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+    .sub {
+      width: 100%;
+      text-align: center;
+
+      p-button {
+        width: 100%;
+      }
+    }
+  }
+}

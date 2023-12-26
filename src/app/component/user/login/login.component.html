@@ -1,1 +1,66 @@
-<p>login works!</p>
+<!-- <p-card header="Login">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <p-growl [value]="msgs"></p-growl>
+  
+      <div class="p-field">
+        <label for="username">Username</label>
+        <p-inputText id="username" type="text" formControlName="username" required autofocus></p-inputText>
+      </div>
+  
+      <div class="p-field">
+        <label for="password">Password</label>
+        <p-password id="password" type="password" formControlName="password" required></p-password>
+      </div>
+  
+      <button pButton type="submit" label="Login"  icon="pi pi-sign-in" [disabled]="loginForm.invalid"></button>
+      <p-button type="submit" label="Login" icon="pi pi-sign-in"></p-button>
+
+      <div class="sub">
+        <p-button type="submit" label="Login" icon="pi pi-sign-in"></p-button>
+      </div>
+    </form>
+  </p-card>
+   -->
+   <div class="containerr">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <p-panel header="Login">
+        <div class="container">
+          <div class="info">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                <i class="pi pi-envelope"></i>
+              </span>
+              <!-- Use a regular input element for the email -->
+              <input
+                type="email"
+                formControlName="email"
+                pInputText
+                placeholder="Email"
+              />
+            </div>
+          </div>
+  
+          <div class="info">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                <i class="pi pi-lock"></i>
+              </span>
+              <input
+                type="password"
+                pPassword
+                formControlName="password"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+  
+          <div class="sub">
+            <p-button type="submit" label="Login" icon="pi pi-sign-in"></p-button>
+          </div>
+        </div>
+      </p-panel>
+    </form>
+  </div>
+  
+  
+  

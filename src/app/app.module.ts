@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,15 @@ import { PartDetailsComponent } from './component/part/part-details/part-details
 import { CreatePartComponent } from './component/part/create-part/create-part.component';
 import { UpdatePartComponent } from './component/part/update-part/update-part.component';
 import { UpdateUserComponent } from './component/user/update-user/update-user.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import {CardModule} from 'primeng/card';
+// import {InputTextModule} from 'primeng/inputtext';
+import { InputTextModule } from 'primeng/inputtext';
+import {PasswordModule} from 'primeng/password';
+import { ButtonModule } from 'primeng/button';
+// import { GrowlModule } from 'primeng/';
+import{PanelModule} from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -32,7 +43,14 @@ import { UpdateUserComponent } from './component/user/update-user/update-user.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CardModule,
+    InputTextModule,
+    PasswordModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    PanelModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
