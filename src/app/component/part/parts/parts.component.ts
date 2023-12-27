@@ -26,6 +26,7 @@ throw new Error('Method not implemented.');
     quantity: 10,
     price: 89.99,
     category: 'Computer Parts',
+    images:'jejje',
     userId: 'user123'
   },
   {
@@ -36,6 +37,7 @@ throw new Error('Method not implemented.');
     quantity: 25,
     price: 3.50,
     category: 'Electrical Supplies',
+    images:'jejje',
     userId: 'user456'
   },
   {
@@ -46,6 +48,7 @@ throw new Error('Method not implemented.');
     quantity: 50,
     price: 0.25,
     category: 'Hardware',
+    images:'jejje',
     userId: 'user789'
   }
   

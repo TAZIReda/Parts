@@ -6,6 +6,7 @@ export interface Part {
     quantity: number;
     price: number;
     category: string;
+    images: string;
     userId: string; // Added as per your request
   
     // Additional attributes (optional, include as needed):

@@ -1,1 +1,20 @@
-<p>part-details works!</p>
+<div *ngIf="part">
+    <h2>{{ part.name }}</h2>
+    <p>Part Number: {{ part.partNumber }}</p>
+    <p>Price: {{ part.price | currency }}</p>
+    <p>Category: {{ part.category }}</p>
+    <p>{{ part.description }}</p>
+  
+    <div class="image-gallery">
+      <!-- <img *ngFor="let image of part.images" [src]="image.url" alt="Part Image"> -->
+    </div>
+  
+    <div class="reviews">
+      <h3>Reviews</h3>
+      </div>
+  
+    <button (click)="addToCart()">Add to Cart</button>
+  </div>
+  
+  <div *ngIf="!part">Loading...</div>
+  
