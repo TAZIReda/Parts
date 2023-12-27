@@ -1,1 +1,38 @@
+<p-toolbar>
+  <div class="logo">
+    <img
+      src="your-logo.png"
+      alt="Your App Logo"
+      style="height: 30px; margin-right: 10px"
+    />
+  </div>
+
+  <div class="menu-buttons">
+    <ng-container *ngFor="let item of items">
+      <button
+        pButton
+        label="{{ item.label }}"
+        icon="{{ item.icon }}"
+        (click)="onMenuItemClick(item)"
+      ></button>
+    </ng-container>
+  </div>
+
+  <div class="search-bar">
+    <p-dropdown
+      [options]="searchOptions"
+      [(ngModel)]="selectedSearchOption"
+      optionLabel="label"
+    ></p-dropdown>
+    <input
+      pInputText
+      type="text"
+      placeholder="Search..."
+      [(ngModel)]="searchValue"
+      (ngModelChange)="onSearch()"
+    />
+    <button pButton icon="pi pi-search" (click)="onSearch()"></button>
+  </div>
+</p-toolbar>
+
 <router-outlet></router-outlet>

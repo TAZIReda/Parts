@@ -6,5 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+searchOptions!: any[];
+selectedSearchOption: any;
+onMenuItemClick(_t8: any) {
+throw new Error('Method not implemented.');
+}
   title = 'frontend';
+
+  items: any[] = [
+    { label: 'Home', icon: 'pi pi-home', routerLink: '/' },
+    { label: 'Products', icon: 'pi pi-shopping-cart', routerLink: '/products' },
+    { label: 'About', icon: 'pi pi-info', routerLink: '/about' },
+    {
+      label: 'More', icon: 'pi pi-ellipsis-v', items: [
+        { label: 'Submenu Item 1', routerLink: '/submenu1' },
+        { label: 'Submenu Item 2', routerLink: '/submenu2' },
+      ]
+    }
+  ];
+
+  searchValue: string = '';
+
+  onSearch() {
+    // Implement your search functionality here
+  }
 }

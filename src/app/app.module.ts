@@ -19,6 +19,7 @@ import { UpdatePartComponent } from './component/part/update-part/update-part.co
 import { UpdateUserComponent } from './component/user/update-user/update-user.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {CardModule} from 'primeng/card';
 // import {InputTextModule} from 'primeng/inputtext';
 import { InputTextModule } from 'primeng/inputtext';
@@ -38,6 +39,8 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ImageModule } from 'primeng/image';
 import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
+import { ToolbarModule } from 'primeng/toolbar';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -74,7 +77,10 @@ import { TagModule } from 'primeng/tag';
     SidebarModule,
     ImageModule,
     CarouselModule,
-    TagModule
+    TagModule,
+    ToolbarModule,
+    DropdownModule,
+    FormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
