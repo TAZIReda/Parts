@@ -1,1 +1,81 @@
-<p>update-part works!</p>
+
+<div class="container">
+    <p-card header="Update Part">
+      <form [formGroup]="updatePartForm" (ngSubmit)="onSubmit()">
+        <!-- <p-growl [value]="msgs"></p-growl> -->
+  
+        <div class="p-field">
+          <label for="name">Name</label>
+          <input
+            id="name"
+            type="text"
+            pInputText
+            formControlName="name"
+            required
+          />
+        </div>
+  
+        <div class="p-field">
+          <label for="description">Description</label>
+          <input
+            id="description"
+            pInputText
+            type="text"
+            formControlName="description"
+            required
+          />
+        </div>
+  
+        <div class="p-field">
+          <label for="PartNumber">Part number</label>
+          <input
+            id="PartNumber"
+            type="number"
+            pInputText
+            formControlName="PartNumber"
+            required
+          />
+        </div>
+        <div class="p-field">
+          <label for="price">Price</label>
+          <input
+            id="price"
+            type="number"
+            pInputText
+            formControlName="price"
+            required
+          />
+        </div>
+
+        <div class="p-field">
+          <label for="quantity">Quantity</label>
+          <input
+            id="quantity"
+            type="number"
+            pInputText
+            formControlName="quantity"
+            required
+          />
+        </div>
+  
+        <div class="p-field">
+          <label for="category">Category</label>
+          <input
+            id="category"
+            pInputText
+            rows="3"
+            formControlName="category"
+            required
+          />
+        </div>
+
+        <button
+          pButton
+          type="submit"
+          label="Update Part"
+          [disabled]="updatePartForm.invalid"
+        ></button>
+      </form>
+    </p-card>
+  </div>
+  
