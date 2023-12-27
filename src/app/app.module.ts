@@ -35,6 +35,9 @@ import {FileUploadModule } from 'primeng/fileupload';
 import { MenuModule } from 'primeng/menu';
 import { MenubarModule } from 'primeng/menubar';
 import { SidebarModule } from 'primeng/sidebar';
+import { ImageModule } from 'primeng/image';
+import { CarouselModule } from 'primeng/carousel';
+import { TagModule } from 'primeng/tag';
 
 @NgModule({
   declarations: [
@@ -68,7 +71,10 @@ import { SidebarModule } from 'primeng/sidebar';
     FileUploadModule,
     MenuModule,
     MenubarModule,
-    SidebarModule
+    SidebarModule,
+    ImageModule,
+    CarouselModule,
+    TagModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

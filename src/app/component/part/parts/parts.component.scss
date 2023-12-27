@@ -1,0 +1,28 @@
+.parts-component {
+    @apply p-grid;
+    justify-content: center;
+    padding: 1rem;
+  
+    .p-card {
+      @apply p-card-style; // Change based on your theme preferences
+      margin-bottom: 1rem;
+    }
+  
+    .p-table {
+      @apply p-table-striped p-table-hoverable; // For basic styling
+      width: 100%;
+    }
+  
+    .p-table th {
+      @apply p-col-3 p-text-left; // Adjust widths and alignment as needed
+    }
+  
+    .p-table td {
+      @apply p-text-left;
+    }
+  
+    .p-button {
+      @apply ml-1; // Spacing between buttons
+    }
+  }
+  
