@@ -1,1 +1,37 @@
-<p>admin works!</p>
+<div class="admin-container">
+  <header class="header">
+    <h1>Admin Panel</h1>
+
+    <p-menubar [model]="items">
+      <!-- <p-menuitem label="Users" routerLink="home"></p-menuitem> -->
+    </p-menubar>
+    <!-- <p-button menuToggler="sidebar-menu" (click)="toggleSidebar()"
+        >Menu</p-button
+      > -->
+  </header>
+
+  <main class="main">
+    <aside class="sidebar">
+      <!-- <p-button menuToggler="sidebar-menu" (click)="toggleSidebar()"
+        >Menu</p-button
+      > -->
+      <p-sidebar [(visible)]="sidebarVisible" position="right">
+        <ng-template pTemplate="header">
+          <h5>Admin Actions</h5>
+        </ng-template>
+        <ng-template pTemplate="content">
+          <ul>
+            <li *ngFor="let item of items">
+              <a routerLink="/{{ item.routerLink }}">{{ item.label }}</a>
+            </li>
+          </ul>
+        </ng-template>
+      </p-sidebar>
+    </aside>
+
+    <section class="content">
+      <app-users></app-users>
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>

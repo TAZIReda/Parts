@@ -31,6 +31,10 @@ import { UserService } from './Services/user.service';
 import {AvatarModule} from 'primeng/avatar';
 import { TabViewModule } from 'primeng/tabview';
 import {FileUploadModule } from 'primeng/fileupload';
+// import { LayoutModule } from 'primeng/layout';
+import { MenuModule } from 'primeng/menu';
+import { MenubarModule } from 'primeng/menubar';
+import { SidebarModule } from 'primeng/sidebar';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,10 @@ import {FileUploadModule } from 'primeng/fileupload';
     HttpClientModule,
     AvatarModule,
     TabViewModule,
-    FileUploadModule
+    FileUploadModule,
+    MenuModule,
+    MenubarModule,
+    SidebarModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
