@@ -1,1 +1,86 @@
-<p>home works!</p>
+<p-card>
+  <div class="card">
+    <p-carousel
+      [value]="products"
+      [numVisible]="3"
+      [numScroll]="3"
+      [circular]="true"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-product pTemplate="item">
+        <div
+          class="border-1 surface-border border-round m-2 text-center py-5 px-3"
+        >
+          <div class="mb-3">
+            <img
+              src="https://primefaces.org/cdn/primeng/images/demo/product/{{
+                product.image
+              }}"
+              [alt]="product.name"
+              class="w-6 shadow-2"
+            />
+          </div>
+          <div>
+            <h4 class="mb-1">{{ product.name }}</h4>
+            <h6 class="mt-0 mb-3">{{ "$" + product.price }}</h6>
+            <p-tag
+              [value]="product.inventoryStatus"
+              [severity]="getSeverity(product.inventoryStatus)"
+            ></p-tag>
+            <div class="car-buttons mt-5">
+              <p-button
+                type="button"
+                styleClass="p-button p-button-rounded mr-2"
+                icon="pi pi-search"
+              ></p-button>
+              <p-button
+                type="button"
+                styleClass="p-button-success p-button-rounded mr-2"
+                icon="pi pi-star-fill"
+              ></p-button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+
+  <div class="grid-container">
+    <div class="grid-item" *ngFor="let article of featuredArticles">
+      <p-card>
+        <p-image
+          [src]="article.image"
+          style="width: 100%; height: 150px"
+        ></p-image>
+        <h4>{{ article.title }}</h4>
+        <p>{{ article.excerpt }}</p>
+        <p-button
+          label="Read More"
+          [routerLink]="['/articles', article.id]"
+        ></p-button>
+      </p-card>
+    </div>
+
+    <div class="grid-item" *ngFor="let service of services">
+      <p-card>
+        <i class="pi {{ service.icon }}"></i>
+        <h4>{{ service.name }}</h4>
+        <p>{{ service.description }}</p>
+      </p-card>
+    </div>
+  </div>
+
+  <p-card header="Contact Us">
+    <!-- <p-icon icon="map-marker"></p-icon> {{ address }}
+      <p-icon icon="phone"></p-icon> {{ phoneNumber }}
+      <p-icon icon="envelope"></p-icon> {{ emailAddress }} -->
+      <i class="pi pi-map-marker"></i>
+      <i class="pi pi-phone"></i>
+      <i class="pi pi-envelope"></i>
+  </p-card>
+
+  <!-- Add your Signup form here -->
+  <!-- <p-card header="Signup"> -->
+    <!-- Your signup form content goes here -->
+  <!-- </p-card> -->
+</p-card>
