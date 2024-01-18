@@ -11,6 +11,7 @@ import { PartsComponent } from './component/part/parts/parts.component';
 import { PartDetailsComponent } from './component/part/part-details/part-details.component';
 import { UpdatePartComponent } from './component/part/update-part/update-part.component';
 import { CreatePartComponent } from './component/part/create-part/create-part.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path:'',
@@ -32,7 +33,8 @@ const routes: Routes = [
    component:UserDetailsComponent
   },
   { path:'update-user',
-   component:UpdateUserComponent
+   component:UpdateUserComponent,
+   canActivate:[AuthGuard]
   },
   { path:'parts',
    component:PartsComponent

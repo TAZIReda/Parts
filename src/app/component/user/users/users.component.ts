@@ -1,28 +1,16 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-users',
-//   templateUrl: './users.component.html',
-//   styleUrls: ['./users.component.scss']
-// })
-// export class UsersComponent {
-
-// }
-
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/Services/user.service';
-
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
   // users: any[] = [];
   users = [
     { name: 'John Doe', email: 'john.doe@example.com', address: 'user' },
-    { name: 'Jane Smith', email: 'jane.smith@example.com', address: 'admin' }
+    { name: 'Jane Smith', email: 'jane.smith@example.com', address: 'admin' },
   ];
 
   constructor(private userService: UserService) {}
@@ -32,7 +20,7 @@ export class UsersComponent implements OnInit {
   }
 
   fetchUsers() {
-    this.userService.getUsers().subscribe(users => {
+    this.userService.getUsers().subscribe((users) => {
       this.users = users;
     });
   }

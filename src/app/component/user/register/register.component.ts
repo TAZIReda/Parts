@@ -9,30 +9,40 @@
 
 // }
 
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { UserService } from '../../../Services/user.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'] 
 })
-export class RegisterComponent {
-  signupForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', Validators.required),
-    confirmPassword: new FormControl('', Validators.required),
-    phone: new FormControl('', [Validators.required, Validators.pattern(/\d{10}/)]),
-  address: new FormControl('', Validators.required),
-  enterpriseName: new FormControl('', Validators.required)
-  });
+export class RegisterComponent implements OnInit {
+constructor( 
+  private userService: UserService,
+  private formBuilder: FormBuilder,
+){}
+
+signupForm!: FormGroup;
+  ngOnInit(): void {
+    this.signupForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      email:  [null, Validators.required, Validators.email],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
+      phone: ['', [Validators.required, Validators.pattern(/\d{10}/)]],
+    address: ['', Validators.required],
+    entreprise:['', Validators.required]
+    });
+  }
 
   msgs: any[] = [];
 
   onSubmit() {
     // Handle registration logic here (e.g., call authentication service)
-    console.log(this.signupForm.value);
+    this.userService.createUser(this.signupForm.getRawValue()).subscribe();
+    // console.log(this.signupForm.value);
     this.msgs = [{ severity: 'info', summary: 'Registration Successful!' }];
   }
-}
+} 

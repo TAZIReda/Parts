@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +28,7 @@ import { ButtonModule } from 'primeng/button';
 // import { GrowlModule } from 'primeng/';
 import{PanelModule} from 'primeng/panel';
 import{TableModule} from 'primeng/table';
-import { UserService } from './Services/user.service';
+import { JWT_Token, UserService } from './Services/user.service';
 import {AvatarModule} from 'primeng/avatar';
 import { TabViewModule } from 'primeng/tabview';
 import {FileUploadModule } from 'primeng/fileupload';
@@ -41,6 +41,8 @@ import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { ToolbarModule } from 'primeng/toolbar';
 import { DropdownModule } from 'primeng/dropdown';
+import { JWT_OPTIONS, JwtHelperService, JwtInterceptor } from '@auth0/angular-jwt';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -80,9 +82,19 @@ import { DropdownModule } from 'primeng/dropdown';
     TagModule,
     ToolbarModule,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem(JWT_Token);
+        }}})
   ],
-  providers: [UserService],
+  providers: [JwtHelperService, {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi:true,
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

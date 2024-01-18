@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-searchOptions!: any[];
+searchOptions: any[]= [
+  { label: 'Register', routerLink: '/register' },
+{ label: 'Submenu Item 2', routerLink: '/submenu2' },];
 selectedSearchOption: any;
 onMenuItemClick(_t8: any) {
 throw new Error('Method not implemented.');
@@ -19,7 +21,7 @@ throw new Error('Method not implemented.');
     { label: 'About', icon: 'pi pi-info', routerLink: '/about' },
     {
       label: 'More', icon: 'pi pi-ellipsis-v', items: [
-        { label: 'Submenu Item 1', routerLink: '/submenu1' },
+        { label: 'Register', routerLink: '/register' },
         { label: 'Submenu Item 2', routerLink: '/submenu2' },
       ]
     }
