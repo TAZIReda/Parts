@@ -1,11 +1,11 @@
 <p-toolbar>
-  <div class="logo">
+  <!-- <div class="logo">
     <img
       src="your-logo.png"
       alt="Your App Logo"
       style="height: 30px; margin-right: 10px"
     />
-  </div>
+  </div> -->
 
   <div class="menu-buttons">
     <ng-container *ngFor="let item of items">
@@ -19,11 +19,6 @@
   </div>
 
   <div class="search-bar">
-    <p-dropdown
-      [options]="searchOptions"
-      [(ngModel)]="selectedSearchOption"
-      optionLabel="label"
-    ></p-dropdown>
     <input
       pInputText
       type="text"
@@ -32,6 +27,15 @@
       (ngModelChange)="onSearch()"
     />
     <button pButton icon="pi pi-search" (click)="onSearch()"></button>
+
+    <p-dropdown
+      [options]="userOptions"
+      [(ngModel)]="selectedUserOption"
+      optionLabel="label"
+      [showClear]="false"
+      placeholder="Select "
+      (ngModelChange)="navigate(selectedUserOption)"
+    ></p-dropdown>
   </div>
 </p-toolbar>
 

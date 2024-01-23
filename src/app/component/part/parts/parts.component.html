@@ -1,46 +1,61 @@
-<p-card>
-  <h1>Parts</h1>
-
-  <p-table [value]="parts">
-    <ng-template pTemplate="header">
-      <tr>
-        <th>Part Number</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Actions</th>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-part>
-      <tr>
-        <td>{{ part.partNumber }}</td>
-        <td>{{ part.name }}</td>
-        <td>{{ part.description }}</td>
-        <td>
+<!-- <p-panel header="Parts List">
+  <div class="p-grid">
+    <div *ngFor="let part of parts" class="p-col-12 p-md-4">
+      <p-card>
+        <img src="{{ part.images }}" alt="{{ part.name }}" class="card-image" />
+        <div class="card-content">
+          <div class="card-header">
+            <h3 class="card-title">{{ part.name }}</h3>
+            <span class="card-badge">{{ part.quantity }}</span>
+          </div>
+          <p class="card-description">{{ part.description }}</p>
+        </div>
+        <div class="card-footer">
           <button
             pButton
             type="button"
-            icon="pi pi-search"
-            (click)="viewDetails(part)"
+            icon="pi pi-info"
+            (click)="viewDetails(part.id)"
           >
-            View
+            View Details
           </button>
-          <button
-            pButton
-            type="button"
-            icon="pi pi-pencil"
-            (click)="editPart(part)"
-          >
-            Edit
-          </button>
-        </td>
-      </tr>
-    </ng-template>
-  </p-table>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</p-panel> -->
 
-  <button
-    pButton
-    type="button"
-    label="Create Part"
-    (click)="createPart()"
-  ></button>
-</p-card>
+
+<ul>
+  <li *ngFor="let part of parts">
+      <a routerLink="/food/{{part.id}}">
+          <img src="{{part.images}}" alt="">
+          <div class="content">
+              <div class="name">
+                  {{part.name}}
+              </div>
+              <span class="favorite {{part.state?'':'not'}}">
+                  coeur
+              </span>
+              <div class="product-item-footer">
+                  <div class="origins">
+                      <span>
+                          {{part.description}}
+                      </span>
+                  </div>
+                  <div class="cook-time">
+                      <span>
+                          <img src="../../assets/clock.png" alt="">
+                      </span>
+                      {{part.quantity}}
+                  </div>
+              </div>       
+              <div class="price">
+                  <span>
+                      {{part.price|currency}}
+                  </span>
+              </div>     
+          </div>
+      </a>
+  </li>
+</ul>

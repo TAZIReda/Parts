@@ -1,93 +1,79 @@
-<!-- <form [formGroup]="partForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input pInputText type="text" formControlName="name" id="name" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="description">Description:</label>
-      <input pI formControlName="description" id="description" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-primary">Create Part</button>
-  </form>
-   -->
+<div class="container">
+  <p-card header="Create Part">
+    <form [formGroup]="partForm" (ngSubmit)="onSubmit()">
+      <!-- <p-growl [value]="msgs"></p-growl> -->
 
-   <div class="container">
-    <p-card header="Create Part">
-      <form [formGroup]="partForm" (ngSubmit)="onSubmit()">
-        <!-- <p-growl [value]="msgs"></p-growl> -->
-  
-        <div class="p-field">
-          <label for="name">Name</label>
-          <input
-            id="name"
-            type="text"
-            pInputText
-            formControlName="name"
-            required
-          />
-        </div>
-  
-        <div class="p-field">
-          <label for="description">Description</label>
-          <input
-            id="description"
-            pInputText
-            type="text"
-            formControlName="description"
-            required
-          />
-        </div>
-  
-        <div class="p-field">
-          <label for="PartNumber">Part number</label>
-          <input
-            id="PartNumber"
-            type="number"
-            pInputText
-            formControlName="PartNumber"
-            required
-          />
-        </div>
-        <div class="p-field">
-          <label for="price">Price</label>
-          <input
-            id="price"
-            type="number"
-            pInputText
-            formControlName="price"
-            required
-          />
-        </div>
+      <div class="p-field">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          pInputText
+          formControlName="name"
+          required
+        />
+      </div>
 
-        <div class="p-field">
-          <label for="quantity">Quantity</label>
-          <input
-            id="quantity"
-            type="number"
-            pInputText
-            formControlName="quantity"
-            required
-          />
-        </div>
-  
-        <div class="p-field">
-          <label for="category">Category</label>
-          <input
-            id="category"
-            pInputText
-            rows="3"
-            formControlName="category"
-            required
-          />
-        </div>
+      <div class="p-field">
+        <label for="description">Description</label>
+        <input
+          id="description"
+          pInputText
+          type="text"
+          formControlName="description"
+          required
+        />
+      </div>
 
-        <button
-          pButton
-          type="submit"
-          label="Create Part"
-          [disabled]="partForm.invalid"
-        ></button>
-      </form>
-    </p-card>
-  </div>
-  
+      <div class="p-field">
+        <label for="reference">Part number</label>
+        <input
+          id="reference"
+          type="number"
+          pInputText
+          formControlName="reference"
+          required
+        />
+      </div>
+      <div class="p-field">
+        <label for="price">Price</label>
+        <input
+          id="price"
+          type="number"
+          pInputText
+          formControlName="price"
+          required
+        />
+      </div>
+
+      <div class="p-field">
+        <label for="quantity">Quantity</label>
+        <input
+          id="quantity"
+          type="number"
+          pInputText
+          formControlName="quantity"
+          required
+        />
+      </div>
+
+      <div class="p-field">
+        <label for="state">Category</label>
+        <input
+          id="state"
+          pInputText
+          rows="3"
+          formControlName="state"
+          required
+        />
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Create Part"
+        [disabled]="partForm.invalid"
+      ></button>
+    </form>
+  </p-card>
+</div>

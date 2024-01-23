@@ -1,8 +1,8 @@
 <div *ngIf="part">
     <h2>{{ part.name }}</h2>
-    <p>Part Number: {{ part.partNumber }}</p>
+    <p>Part Number: {{ part.reference }}</p>
     <p>Price: {{ part.price | currency }}</p>
-    <p>Category: {{ part.category }}</p>
+    <p>Category: {{ part.state }}</p>
     <p>{{ part.description }}</p>
   
     <div class="image-gallery">

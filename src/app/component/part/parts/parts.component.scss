@@ -24,5 +24,143 @@
     .p-button {
       @apply ml-1; // Spacing between buttons
     }
+    img{
+      border-radius: 8px;
+  }
+  }
+  /* Add global styles as needed */
+  .p-grid {
+    margin: 20px; /* Adjust margin as needed */
   }
   
+  .p-col-12 {
+    @media (min-width: 768px) {
+      width: 100%;
+    }
+  
+    @media (min-width: 992px) {
+      width: 50%;
+    }
+  
+    @media (min-width: 1200px) {
+      width: 33.33%; /* Display three cards in one line */
+    }
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card-title {
+    margin: 0; /* Remove default margin */
+  }
+  
+  .card-badge {
+    background-color: #007ad9; /* Adjust color as needed */
+    color: #ffffff; /* Adjust color as needed */
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+  }
+  
+  .card-description {
+    margin-top: 1rem; /* Adjust margin as needed */
+  }
+  
+  .card-footer {
+    margin-top: 1rem; /* Adjust margin as needed */
+    text-align: right;
+  }
+  
+
+
+  ////////////////////////////////////////////////////////////////
+  li {
+    list-style-type: none;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+ul a{
+    width: 20rem;
+    height: 22rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #e72929;
+}
+
+ul img{
+    height: 15rem;
+}
+
+.cook-time img{
+    width: 10px;
+    height: 10px;
+}
+
+.content{
+    padding: .5rem 1rem;
+    position: relative;
+}
+
+.favorite{
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+.favorite.not{
+    color: grey;
+}
+
+.origins{
+    flex: 9;
+}
+
+.origins span{
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: .7rem;
+    color: grey ;
+    margin-right: .3rem;
+}
+
+.cook-time{
+    font-size: .8rem;
+    flex: 3;
+    text-align: right;
+
+}
+
+.price{
+    color: #0b8bbd;
+    margin-top: .7rem;
+}
+
+.product-item-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

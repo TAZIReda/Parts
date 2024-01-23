@@ -1,38 +1,45 @@
-// import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-// @Component({
-//   selector: 'app-create-part',
-//   templateUrl: './create-part.component.html',
-//   styleUrls: ['./create-part.component.scss']
-// })
-// export class CreatePartComponent {
-
-// }
-
-import { Component } from '@angular/core';
-
-
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { PartService } from 'src/app/Services/part.service';
 
 @Component({
   selector: 'app-create-part',
   templateUrl: './create-part.component.html',
-  styleUrls: ['./create-part.component.scss']
+  styleUrls: ['./create-part.component.scss'],
 })
-export class CreatePartComponent {
-onSubmit() {
-throw new Error('Method not implemented.');
-}
-  partForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    description: new FormControl('', Validators.required),
-    partNumber: new FormControl('', Validators.required),
-    quantity: new FormControl('', Validators.required),
-    price: new FormControl('', Validators.required),
-    category: new FormControl('', Validators.required),
-    userId: new FormControl('', Validators.required) // Added from Part interface
-    // Add other fields from the Part interface as needed
-  });
+export class CreatePartComponent implements OnInit {
+  constructor(
+    private formBuilder: FormBuilder,
+    private partService: PartService,
+    private router: Router
+  ) {}
+  onSubmit() {
+    this.partService.createPart(this.partForm.getRawValue()).subscribe();
+    this.router.navigateByUrl('parts');
+  }
 
-  // ... rest of the component code
+  partForm!: FormGroup;
+
+  ngOnInit(): void {
+    this.partForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      reference: ['', Validators.required],
+      quantity: ['', Validators.required],
+      price: ['', Validators.required],
+      state: ['', Validators.required],
+      // userId: ['', Validators.required],
+    });
+  }
+
+  navigate() {
+    this.router.navigateByUrl('parts');
+  }
 }

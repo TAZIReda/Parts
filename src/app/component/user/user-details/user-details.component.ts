@@ -1,54 +1,50 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-user-details',
-//   templateUrl: './user-details.component.html',
-//   styleUrls: ['./user-details.component.scss']
-// })
-// export class UserDetailsComponent {
-
-// }
- 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { UserService } from 'src/app/Services/user.service';
-
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Observable, map, of, switchMap, tap } from 'rxjs';
+import { User, UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
-  styleUrls: ['./user-details.component.scss']
+  styleUrls: ['./user-details.component.scss'],
 })
 export class UserDetailsComponent implements OnInit {
-  // userDetails: any;
-  userDetails = {
-    name: 'John Doe',
-    email: 'john.doe@example.com',
-    phone: '123-456-7890',
-    address:'ALger',
-    enterpriseName:'Google',
-    avatar: 'assets/images/user.jpeg', // Replace with actual image path
-    initials: 'JD' // Calculate initials for avatar fallback
+  userDetails: User={
+    id: 0,
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    entreprise: ''
   };
   isAdmin: boolean = false; // Check user role if applicable
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {}
 
   ngOnInit() {
-    const userId = this.activatedRoute.snapshot.params['id'];
-    this.fetchUserDetails(userId);
+    this.userService
+      .getUserId()
+      .pipe(
+        switchMap((id: number | null) => {
+          if (id !== null) {
+            return this.userService.getUserById(id).pipe(
+              map((user: User) => {
+                this.userDetails = user;
+              })
+            );
+          } else {
+            return of(null);
+          }
+        })
+      )
+      .subscribe();
   }
-
-  fetchUserDetails(id: number) {
-    this.userService.getUserById(id).subscribe(user => {
-      // this.userDetails = user;
-    });
-  }
-
-  editUser() {
+  editUser(id:number) {
+    this.router.navigateByUrl('update-user/'+id);
     // Navigate to edit user component or trigger edit functionality
   }
 }

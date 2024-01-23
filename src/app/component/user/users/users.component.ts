@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/Services/user.service';
 
 @Component({
@@ -7,13 +8,12 @@ import { UserService } from 'src/app/Services/user.service';
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
-  // users: any[] = [];
-  users = [
-    { name: 'John Doe', email: 'john.doe@example.com', address: 'user' },
-    { name: 'Jane Smith', email: 'jane.smith@example.com', address: 'admin' },
-  ];
 
-  constructor(private userService: UserService) {}
+   users: any[] = [];
+ 
+
+  constructor(private userService: UserService,
+    private router:Router) {}
 
   ngOnInit() {
     this.fetchUsers();
@@ -25,11 +25,16 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  editUser(user: any) {
+  editUser(id: number) {
+    this.router.navigateByUrl('update-user/'+id);
     // Handle user editing logic here
   }
 
-  deleteUser(user: any) {
+  deleteUser(id: number) {
+    this.userService.deleteUser(id).subscribe()
     // Handle user deletion logic here
   }
+
+  navigate(id: number) {
+    this.router.navigateByUrl('user-details/'+id);    }
 }
