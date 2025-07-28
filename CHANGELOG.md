@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/TAZIReda/Parts/compare/v3.0.0...v3.0.1) (2025-07-28)
+
+
+### Bug Fixes
+
+* **number:** correct increment logic ([aa8ce5f](https://github.com/TAZIReda/Parts/commit/aa8ce5f3d303c9688f761a2ff27bbfc3ba8815cf))
+
 ## [3.0.0](https://github.com/TAZIReda/Parts/compare/v2.0.0...v3.0.0) (2025-07-28)
 
 
