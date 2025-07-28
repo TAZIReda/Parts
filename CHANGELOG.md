@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/TAZIReda/Parts/compare/v0.0.3...v1.1.0) (2025-07-28)
+
+
+### Features
+
+* **package:** add logic ([b7ae6cd](https://github.com/TAZIReda/Parts/commit/b7ae6cd09095c38f5f3c4273fb01c1958cbf056a))
+
 ### [0.0.3](https://github.com/TAZIReda/Parts/compare/v0.0.2...v0.0.3) (2025-07-28)
 
 
