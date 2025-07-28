@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/TAZIReda/Parts/compare/v2.0.0...v3.0.0) (2025-07-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename FormField → FormInput
+
+### Features
+
+* **number:** add logic 2 ([95ba8b6](https://github.com/TAZIReda/Parts/commit/95ba8b65c3aac28d259e35ef1c225452165dcabc))
+* rename FormField → FormInput ([c5abbcd](https://github.com/TAZIReda/Parts/commit/c5abbcda2d0448d425abb667232c43b0563bdc0a))
+
+
+### Bug Fixes
+
+* **number:** correct increment logic ([765a5ee](https://github.com/TAZIReda/Parts/commit/765a5ee85bdd4dd6cc70c2ba5ae51d2de7386ed2))
+
 ## [2.0.0](https://github.com/TAZIReda/Parts/compare/v1.1.0...v2.0.0) (2025-07-28)
 
 
